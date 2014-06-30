@@ -373,7 +373,6 @@ public class HardMode extends EasyMode {
 
     @Override
     protected void whoFirstMove(char[][] a, int wf){
-        //System.out.println("whoFirstMove начал работу");
         if( wf == 1){
             pc(a);
         }
