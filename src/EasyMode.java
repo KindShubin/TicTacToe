@@ -20,7 +20,6 @@ public class EasyMode {
     protected char[][] me(char[][] meArea){
         markerCheckCorrectMyMove = true;
         while (markerCheckCorrectMyMove){
-            System.out.println("me начал работу");
             Consol.show(meArea);
             System.out.println("Введите цифру от 1 до 9, соответствующую ячейке. Например:");
             Consol.showPrimer();
@@ -38,7 +37,6 @@ public class EasyMode {
                 //markerCheckCorrectMyMove = false;
             }
         }
-        System.out.println("Ошибка! реализация вышла из цикла while. Переданные значения не соответствуют действительности");
         return areaMode;
     }
 
@@ -53,11 +51,8 @@ public class EasyMode {
     }
 
     private void pc(char[][] pcArea){
-        System.out.println("pc в EasyMode начал работу");
         randomMove(pcArea);
         pc(me(areaMode));
-          //  }
-        //pc(areaMode);
     }
 
     protected void randomMove(char[][] a){
@@ -107,7 +102,7 @@ public class EasyMode {
                 }
             }
         }
-        if(c==9){//Main.ROW_COLUMN_SIZE*Main.ROW_COLUMN_SIZE){
+        if(c==(Main.ROW_COLUMN_SIZE*Main.ROW_COLUMN_SIZE)){
             return true;
         }
         return false;

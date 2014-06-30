@@ -8,10 +8,9 @@ public class HardMode extends EasyMode {
 
     public HardMode(char[][] area, int a){
         super();
-        System.out.println("запуск конструкторе хард");
+        //System.out.println("запуск конструкторе хард");
         areaHardMode = area;
         whoFirstMove(areaHardMode,a);
-
     }
 
     protected void firstMove(char[][] area){ //первый ход ПК. Если [1][1] занято, то что угодно по углам
@@ -44,32 +43,31 @@ public class HardMode extends EasyMode {
         else return b;
     }
 
-    //@Override
     protected void pc(char[][] pcArea){
-        System.out.println("pc начал работу");
+        //System.out.println("pc начал работу");
         if(checkFirstMove(pcArea)){
             firstMove(pcArea);
         }
-        System.out.println("firstMove не сработал");
+        //System.out.println("firstMove не сработал");
         chekToWin(pcArea);
-        System.out.println("checkToWin не сработал");
+        //System.out.println("checkToWin не сработал");
         checkToProtection(pcArea);
-        System.out.println("chackToProtection не сработал");
+        //System.out.println("chackToProtection не сработал");
         checkToAllFreeAngularFields(pcArea);
-        System.out.println("checkToAllFreeAngularFields не сработала");
+        //System.out.println("checkToAllFreeAngularFields не сработала");
         checkTo3FreeAngularFields(pcArea);
-        System.out.println("checkTo3FreeAngularFields не сработал");
+        //System.out.println("checkTo3FreeAngularFields не сработал");
         checkOpposite2Fields(pcArea);
-        System.out.println("checkOpposite2Fields не сработал");
+        //System.out.println("checkOpposite2Fields не сработал");
         check2FreeAngularFields(pcArea);
-        System.out.println("check2FreeAngularFields не сработал");
+        //System.out.println("check2FreeAngularFields не сработал");
         checkOnCorrectAngularField(pcArea);
-        System.out.println("checkOnCorrectAngularField не сработала");
+        //System.out.println("checkOnCorrectAngularField не сработала");
         checkAllAreaOnOnePcField(pcArea);
-        System.out.println("randomMove....");
+        //System.out.println("randomMove....");
         randomMove(pcArea);
         areaHardMode=areaMode;
-        System.out.println("метод pc поностью пройден. переход к me()");
+        //System.out.println("метод pc поностью пройден. переход к me()");
         pc(me(areaHardMode));
     }
 
@@ -78,49 +76,49 @@ public class HardMode extends EasyMode {
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][1]==' '){areaHardMode[0][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 1");
+            //else System.out.println("ОШИБКА chekToWin 1");
         }
         if(pereborFirstPart(a, 2, 0)==2){
             if(a[1][0]==' '){areaHardMode[1][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]==' '){areaHardMode[1][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 2");
+            //else System.out.println("ОШИБКА chekToWin 2");
         }
         if(pereborFirstPart(a, 2, 0)==3){
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]==' '){areaHardMode[2][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 3");
+            //else System.out.println("ОШИБКА chekToWin 3");
         }
         if(pereborFirstPart(a, 2, 0)==4){
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][0]==' '){areaHardMode[1][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 4");
+            //else System.out.println("ОШИБКА chekToWin 4");
         }
         if(pereborFirstPart(a, 2, 0)==5){
             if(a[0][1]==' '){areaHardMode[0][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]==' '){areaHardMode[2][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 5");
+            //else System.out.println("ОШИБКА chekToWin 5");
         }
         if(pereborFirstPart(a, 2, 0)==6){
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]==' '){areaHardMode[1][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 6");
+            //else System.out.println("ОШИБКА chekToWin 6");
         }
         if(pereborFirstPart(a, 2, 0)==7){
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 7");
+            //else System.out.println("ОШИБКА chekToWin 7");
         }
         if(pereborFirstPart(a, 2, 0)==8){
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToWin 8");
+            //else System.out.println("ОШИБКА chekToWin 8");
         }
     }
 
@@ -129,49 +127,49 @@ public class HardMode extends EasyMode {
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][1]==' '){areaHardMode[0][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 1");
+            //else System.out.println("ОШИБКА chekToProtection 1");
         }
         if(pereborFirstPart(a, 8, 0)==2){
             if(a[1][0]==' '){areaHardMode[1][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]==' '){areaHardMode[1][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 2");
+            //else System.out.println("ОШИБКА chekToProtection 2");
         }
         if(pereborFirstPart(a, 8, 0)==3){
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]==' '){areaHardMode[2][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 3");
+            //else System.out.println("ОШИБКА chekToProtection 3");
         }
         if(pereborFirstPart(a, 8, 0)==4){
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][0]==' '){areaHardMode[1][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 4");
+            //else System.out.println("ОШИБКА chekToProtection 4");
         }
         if(pereborFirstPart(a, 8, 0)==5){
             if(a[0][1]==' '){areaHardMode[0][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]==' '){areaHardMode[2][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 5");
+            //else System.out.println("ОШИБКА chekToProtection 5");
         }
         if(pereborFirstPart(a, 8, 0)==6){
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]==' '){areaHardMode[1][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 6");
+            //else System.out.println("ОШИБКА chekToProtection 6");
         }
         if(pereborFirstPart(a, 8, 0)==7){
             if(a[0][0]==' '){areaHardMode[0][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]==' '){areaHardMode[2][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 7");
+            //else System.out.println("ОШИБКА chekToProtection 7");
         }
         if(pereborFirstPart(a, 8, 0)==8){
             if(a[0][2]==' '){areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]==' '){areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][0]==' '){areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekToProtection 8");
+            //else System.out.println("ОШИБКА chekToProtection 8");
         }
     }
 
@@ -279,43 +277,43 @@ public class HardMode extends EasyMode {
             if(a[0][0]=='O'){areaHardMode[0][randomTwoValue(1,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][1]=='O'){areaHardMode[0][randomTwoValue(0,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[0][2]=='O'){areaHardMode[0][randomTwoValue(0,1)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 1");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 1");
         }
         if(pereborFirstPart(a, 1, 0)==2){
             if(a[1][0]=='O'){areaHardMode[1][randomTwoValue(1,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]=='O'){areaHardMode[1][randomTwoValue(0,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]=='O'){areaHardMode[1][randomTwoValue(0,1)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 2");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 2");
         }
         if(pereborFirstPart(a, 1, 0)==3){
             if(a[2][0]=='O'){areaHardMode[2][randomTwoValue(1,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]=='O'){areaHardMode[2][randomTwoValue(0,2)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]=='O'){areaHardMode[2][randomTwoValue(0,1)]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 3");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 3");
         }
         if(pereborFirstPart(a, 1, 0)==4){
             if(a[0][0]=='O'){areaHardMode[randomTwoValue(1,2)][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][0]=='O'){areaHardMode[randomTwoValue(0,2)][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][0]=='O'){areaHardMode[randomTwoValue(0,1)][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 4");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 4");
         }
         if(pereborFirstPart(a, 1, 0)==5){
             if(a[0][1]=='O'){areaHardMode[randomTwoValue(1,2)][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]=='O'){areaHardMode[randomTwoValue(0, 2)][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][1]=='O'){areaHardMode[randomTwoValue(0,1)][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 5");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 5");
         }
         if(pereborFirstPart(a, 1, 0)==6){
             if(a[0][2]=='O'){areaHardMode[randomTwoValue(1,2)][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][2]=='O'){areaHardMode[randomTwoValue(0,2)][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]=='O'){areaHardMode[randomTwoValue(0,1)][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 6");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 6");
         }
         if(pereborFirstPart(a, 1, 0)==7){
             if(a[0][0]=='O'){int x = randomTwoValue(1,2); areaHardMode[x][x]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[1][1]=='O'){int x = randomTwoValue(0,2); areaHardMode[x][x]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
             if(a[2][2]=='O'){int x = randomTwoValue(0,1); areaHardMode[x][x]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 7");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 7");
         }
         if(pereborFirstPart(a, 1, 0)==8){
             if(a[0][2]=='O'){if(randomTwoValue(0,1)==0) {areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
@@ -324,7 +322,7 @@ public class HardMode extends EasyMode {
                                 else {areaHardMode[2][0]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}}
             if(a[2][0]=='O'){if(randomTwoValue(0,1)==0) {areaHardMode[0][2]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}
                                 else {areaHardMode[1][1]='O'; checkWinAndDraw(areaHardMode, "pc"); pc(me(areaHardMode));}}
-            else System.out.println("ОШИБКА chekAllAreaOnOnePcField 8");
+            //else System.out.println("ОШИБКА chekAllAreaOnOnePcField 8");
         }
     }
 
@@ -375,7 +373,7 @@ public class HardMode extends EasyMode {
 
     @Override
     protected void whoFirstMove(char[][] a, int wf){
-        System.out.println("whoFirstMove начал работу");
+        //System.out.println("whoFirstMove начал работу");
         if( wf == 1){
             pc(a);
         }

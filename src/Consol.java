@@ -31,8 +31,7 @@ public class Consol{
             System.out.println();
             if(i < area.length-1){
                 System.out.println("           ");
-                //System.out.println("---|---|---");
-            } //else row();
+            }
         }
     }
 
